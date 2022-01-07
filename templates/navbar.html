@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg py-lg-1 pt-3">{% load static %}
+    <div class="container nav-bar">
+
+        <a class="name" href="/">
+            {% comment %} <i class="fa fa-code"></i> {% endcomment %}
+             Geindreau Quentin
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars text-white"></i>
+        </button>
+
+        <div class="collapse navbar-collapse nav-bar" id="navbar-default">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-10 collapse-brand">
+                        <a href="javascript:void(0)" class="name">
+                            Geindreau Quentin
+                        </a>
+                    </div>
+                    <div class="col-2 collapse-close text-center">
+                        <button type="button" class="navbar-toggler text-warning" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projets">
+                        {% comment %} <i class="fa fa-tasks"></i> {% endcomment %}
+                        <span class="nav-text">Projets</span>
+                    </a>
+                </li>       
+        </div>
+    </div>
+</nav>

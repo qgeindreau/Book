@@ -1,0 +1,51 @@
+{% extends 'base.html' %}{% load filter_tags %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="row p-lg-4 p-2 justify-content-center">
+        <div class="col-12">
+            <p class="project-title mb-3">{{project.title}}</p> 
+            <hr class="mt-2 mb-0">
+        </div>
+        <div class="col-lg-10 col-12">
+            <img class="d-block w-100 project-image" src="{{project.image.url}}" alt="{{project.title}} (img)">
+        </div>
+        <div class="col-12 text-left">
+            <p class="mini-title">Description:</p>
+            <p class="project-disc">{{project.description|safe}}</p>
+            
+            <div class="mt-4">
+                <p class="mini-title">Outils:</p>
+                <p class="mb-0">Les outils utilisé pour ce projet:</p>
+                {% with project.tools|split:"," as tools %}
+                    {% for tool in tools %}
+                        <span class="tool">{{tool}}</span>
+                    {% endfor %}
+                {% endwith %}
+            </div>
+            <div class="text-left pt-4">
+                <p class="mini-title mb-3">Pour en voir plus:</p>
+                {%if project.github%}
+                <a href="{{project.github}}" class="preview-btn">
+                    <i class="fab fa-github"></i>
+                    Code Source
+                </a>
+                {%endif%}
+                {%if project.demo%}
+                <a href="{{project.demo}}" class="preview-btn">
+                    <i class="fas fa-globe"></i> 
+                    Site web
+                </a>
+                {%endif%}
+                {%if project.vu_html%}
+                <a href="{{project.vu_html.url}}" class="preview-btn">
+                    <i class="fas fa-globe"></i> 
+                    Notebook html
+                </a>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
